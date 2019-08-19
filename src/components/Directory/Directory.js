@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import MenuItem from '../MenuItem/MenuItem';
 
 import './Directory.scss';
+import { link } from 'fs';
 
 export class Directory extends Component {
   state = {
@@ -46,12 +47,10 @@ export class Directory extends Component {
     return (
       <div className="directory">
         {
-          this.state.sections.map(({ id, imageUrl, title, size }) => (
+          this.state.sections.map(({ id, ...otherSectionProps }) => (
             <MenuItem 
               key={id} 
-              imageUrl={imageUrl} 
-              title={title} 
-              size={size} 
+              {...otherSectionProps}
             />
           ))
         }
