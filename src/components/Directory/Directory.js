@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import MenuItem from '../MenuItem/MenuItem';
 
 import './Directory.scss';
-import { link } from 'fs';
+// import { link } from 'fs';
 
 export class Directory extends Component {
   state = {
@@ -45,7 +45,7 @@ export class Directory extends Component {
   
   render() {
     return (
-      <div className="directory">
+      <div className='directory'>
         {
           this.state.sections.map(({ id, ...otherSectionProps }) => (
             <MenuItem 
